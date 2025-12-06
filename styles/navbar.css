@@ -1,0 +1,104 @@
+/* Navbar Custom Styles */
+
+/* Override Nextra navbar styles for black & white theme */
+:root {
+    --navbar-bg: #ffffff;
+    --navbar-border: #e5e7eb;
+    --navbar-text: #111827;
+    --navbar-hover: #f3f4f6;
+}
+
+html[class~="dark"] {
+    --navbar-bg: #0a0a0a;
+    --navbar-border: #27272a;
+    --navbar-text: #f8fafc;
+    --navbar-hover: #18181b;
+}
+
+/* Navbar background */
+nav {
+    background: var(--navbar-bg) !important;
+    border-bottom: 1px solid var(--navbar-border) !important;
+    backdrop-filter: blur(10px);
+    padding: 0.875rem 1.5rem !important;
+}
+
+/* Navbar links */
+nav a {
+    color: var(--navbar-text) !important;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background: var(--navbar-hover) !important;
+    color: var(--navbar-text) !important;
+}
+
+/* Logo text color in dark mode */
+html[class~="dark"] nav svg {
+    color: #f8fafc !important;
+}
+
+html[class~="dark"] nav span {
+    color: #f8fafc !important;
+}
+
+/* Search bar styling */
+nav input[type="search"] {
+    background: var(--navbar-hover) !important;
+    border: 1px solid var(--navbar-border) !important;
+    color: var(--navbar-text) !important;
+}
+
+nav input[type="search"]:focus {
+    border-color: #111827 !important;
+}
+
+html[class~="dark"] nav input[type="search"]:focus {
+    border-color: #f8fafc !important;
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 1rem !important;
+    }
+
+    nav svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    nav span {
+        font-size: 0.9rem !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 140px;
+    }
+}
+
+/* Robotic Icon Styling */
+.robotic-icon {
+    color: #111827;
+    transition: color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+}
+
+html[class~="dark"] .robotic-icon {
+    color: #f8fafc;
+}
+
+.robotic-icon:hover {
+    transform: scale(1.05);
+}
+
+/* Logo link styling */
+nav a[href="/"] {
+    display: flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+}

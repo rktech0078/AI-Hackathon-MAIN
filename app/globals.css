@@ -1,0 +1,103 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* Import Auth Styles */
+@import '../styles/auth.css';
+
+/* Import Navbar Styles */
+@import '../styles/navbar.css';
+
+/* Import Code Block Styles */
+@import '../styles/codeblock.css';
+
+:root {
+  /* Typography - Using 'Outfit' for a more modern, tech feel */
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* Light Theme Colors - Crisp & Clean */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f3f4f6;
+  /* Slightly darker for better separation */
+  --text-primary: #111827;
+  /* Almost black for sharp contrast */
+  --text-secondary: #4b5563;
+  --border-color: #e5e7eb;
+  --accent-color: #2563eb;
+  /* Royal Blue */
+  --accent-hover: #1d4ed8;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+}
+
+[data-theme='dark'] {
+  /* Dark Theme Colors - Deep & Neon Pop */
+  --bg-primary: #09090b;
+  /* Zinc 950 - Very dark, not pitch black */
+  --bg-secondary: #18181b;
+  /* Zinc 900 */
+  --text-primary: #f8fafc;
+  /* Slate 50 - Very bright white */
+  --text-secondary: #94a3b8;
+  /* Slate 400 */
+  --border-color: #27272a;
+  /* Zinc 800 */
+  --accent-color: #3b82f6;
+  /* Bright Blue */
+  --accent-hover: #60a5fa;
+  --card-bg: #18181b;
+  --card-border: #27272a;
+}
+
+/* Global Base Styles */
+html {
+  scroll-behavior: smooth;
+  background: var(--bg-primary);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+/* Enhanced Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  /* Tight tracking for modern look */
+}
+
+/* Code styles moved to styles/codeblock.css */
+
+/* Links */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Smooth Transitions */
+*,
+*::before,
+*::after {
+  border-color: var(--border-color);
+}

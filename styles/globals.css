@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 245, 245, 245;
+}
+
+/* Support both system preference and manual toggle */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 235, 235, 235;
+    --background-start-rgb: 25, 25, 25;
+    --background-end-rgb: 15, 15, 15;
+  }
+}
+
+/* Ensure manual toggle overrides */
+[data-theme='dark'],
+.dark {
+  --foreground-rgb: 235, 235, 235;
+  --background-start-rgb: 25, 25, 25;
+  --background-end-rgb: 15, 15, 15;
+}
+
+/* Force headings to be light in dark mode to override Nextra defaults */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6,
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: rgb(var(--foreground-rgb)) !important;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb)));
+  min-height: 100vh;
+}
+
+/* Premium Navbar Styling */
+.nextra-nav-container {
+  backdrop-filter: blur(12px) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding: 0.75rem 1rem !important;
+}
+
+.dark .nextra-nav-container {
+  background-color: rgba(15, 15, 15, 0.95) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Hero Section Gradient Text */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(90deg, #333333, #000000);
+}
+
+.dark .text-gradient {
+  background-image: linear-gradient(90deg, #ffffff, #a1a1a1);
+}
+
+/* Premium Sidebar Text in Dark Mode */
+[data-theme='dark'] aside a,
+.dark aside a {
+  color: #a3a3a3 !important;
+  transition: color 0.2s ease;
+}
+
+[data-theme='dark'] aside a:hover,
+[data-theme='dark'] aside a[aria-current="page"],
+.dark aside a:hover,
+.dark aside a[aria-current="page"] {
+  color: #ffffff !important;
+}
+
+/* Code Blocks - Dark Mode Fix */
+.dark pre,
+.dark code {
+  background-color: rgba(30, 30, 30, 0.8) !important;
+  color: #e5e5e5 !important;
+}
+
+.dark pre code {
+  background-color: transparent !important;
+}
+
+/* Inline code */
+.dark :not(pre)>code {
+  background-color: rgba(50, 50, 50, 0.5) !important;
+  color: #e5e5e5 !important;
+  padding: 0.2em 0.4em !important;
+  border-radius: 3px !important;
+}
+
+/* Code block container */
+.dark div[class*="code"],
+.dark div[class*="highlight"] {
+  background-color: rgba(20, 20, 20, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Optimize content font size slightly */
+article {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Reduce main content max-width to make room for TOC */
+.nextra-content {
+  max-width: 850px !important;
+}
+
+/* Force TOC to show at 1100px breakpoint */
+@media (min-width: 1100px) {
+
+  aside.nextra-toc,
+  nav.nextra-toc {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Make TOC compact and scrollable */
+aside.nextra-toc,
+nav.nextra-toc {
+  width: 260px !important;
+  font-size: 0.875rem !important;
+  max-height: calc(100vh - 8rem) !important;
+  overflow-y: auto !important;
+  position: sticky !important;
+  top: 4rem !important;
+}
+
+/* Navbar mobile optimization */
+@media (max-width: 768px) {
+  .nextra-nav-container {
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .nextra-nav-container>div {
+    flex-wrap: wrap !important;
+  }
+}

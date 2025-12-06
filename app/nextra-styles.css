@@ -1,0 +1,152 @@
+/* Zabardast Nextra Theme Customizations */
+
+/* ===== SIDEBAR STYLING ===== */
+.nextra-sidebar-container {
+    background: var(--bg-primary) !important;
+    border-right: 1px solid var(--border-color) !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease !important;
+}
+
+/* Sidebar Links */
+.nextra-sidebar-container nav a {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    border-radius: 0.5rem !important;
+    padding: 0.5rem 0.75rem !important;
+    margin: 0.25rem 0 !important;
+    color: var(--text-secondary) !important;
+    font-weight: 500 !important;
+    border: 1px solid transparent !important;
+}
+
+.nextra-sidebar-container nav a:hover {
+    background: var(--bg-secondary) !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+    transform: translateX(4px);
+}
+
+.nextra-sidebar-container nav a.active,
+.nextra-sidebar-container nav a[aria-current="page"] {
+    background: rgba(59, 130, 246, 0.1) !important;
+    /* Subtle blue tint */
+    color: var(--accent-color) !important;
+    font-weight: 700 !important;
+    border-color: rgba(59, 130, 246, 0.2) !important;
+    box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.1) !important;
+}
+
+/* ===== NAVBAR STYLING ===== */
+.nextra-nav-container {
+    background: rgba(255, 255, 255, 0.8) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(12px) saturate(180%) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 50 !important;
+}
+
+[data-theme='dark'] .nextra-nav-container {
+    background: rgba(9, 9, 11, 0.8) !important;
+    /* Darker glass in dark mode */
+}
+
+/* ===== BANNER STYLING ===== */
+.nextra-banner {
+    background: linear-gradient(90deg, #2563eb, #7c3aed) !important;
+    /* Blue to Purple */
+    color: white !important;
+    font-weight: 600 !important;
+    padding: 0.75rem !important;
+}
+
+/* ===== CONTENT AREA ===== */
+.nextra-content {
+    color: var(--text-primary) !important;
+}
+
+/* Headings */
+.nextra-content h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 1.5rem !important;
+    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nextra-content h2 {
+    margin-top: 2.5rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* ===== CARDS ===== */
+.nextra-card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 1rem !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.nextra-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15) !important;
+    border-color: var(--accent-color) !important;
+}
+
+[data-theme='dark'] .nextra-card:hover {
+    box-shadow: 0 12px 24px -10px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* ===== CALLOUTS ===== */
+.nextra-callout {
+    border-radius: 0.75rem !important;
+    border-left-width: 4px !important;
+    background: var(--bg-secondary) !important;
+}
+
+/* ===== SEARCH BAR ===== */
+.nextra-search input {
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 9999px !important;
+    /* Pill shape */
+    padding-left: 1.25rem !important;
+    transition: all 0.2s ease !important;
+}
+
+.nextra-search input:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2) !important;
+    width: 15rem !important;
+    /* Expand on focus */
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* ===== MOBILE MENU ===== */
+.nextra-hamburger {
+    border-radius: 0.5rem !important;
+    background: transparent !important;
+}
+
+.nextra-hamburger:hover {
+    background: var(--bg-secondary) !important;
+}

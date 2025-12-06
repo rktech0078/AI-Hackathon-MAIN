@@ -1,0 +1,159 @@
+/* Professional Code Block Styles - Nextra/Rehype Compatible */
+
+/* Main Container for Code Blocks */
+div[data-rehype-pretty-code-fragment] {
+    margin: 1.5rem 0;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+html[class~="dark"] div[data-rehype-pretty-code-fragment] {
+    background: #0d1117;
+    border-color: #30363d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Filename / Title Header */
+div[data-rehype-pretty-code-title] {
+    background: #f9fafb;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: #374151;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 500;
+}
+
+html[class~="dark"] div[data-rehype-pretty-code-title] {
+    background: #161b22;
+    color: #c9d1d9;
+    border-bottom-color: #30363d;
+}
+
+/* Pre Block (The actual code area) */
+pre {
+    margin: 0 !important;
+    padding: 1.25rem !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    overflow-x: auto;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+    position: relative !important;
+}
+
+/* Code Content */
+pre code {
+    display: grid;
+    min-width: 100%;
+    background: transparent !important;
+    color: inherit !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Copy Button - Integrated Top Right */
+/* Broad selectors to catch any Nextra implementation */
+.nextra-copy-icon,
+button[title="Copy code"],
+.nextra-code-copy-btn,
+div[data-rehype-pretty-code-fragment]>button,
+pre>button {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    z-index: 100 !important;
+    opacity: 1 !important;
+    /* Force visible */
+    visibility: visible !important;
+    display: flex !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    padding: 6px !important;
+    color: #8b949e !important;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer !important;
+}
+
+/* Ensure SVG inside is visible */
+.nextra-copy-icon svg,
+button[title="Copy code"] svg,
+.nextra-code-copy-btn svg,
+div[data-rehype-pretty-code-fragment]>button svg,
+pre>button svg {
+    width: 16px !important;
+    height: 16px !important;
+    display: block !important;
+    fill: currentColor !important;
+}
+
+/* If there is a title, move the button down slightly */
+div[data-rehype-pretty-code-title]+pre .nextra-copy-icon,
+div[data-rehype-pretty-code-title]+pre button[title="Copy code"],
+div[data-rehype-pretty-code-title]+pre .nextra-code-copy-btn,
+div[data-rehype-pretty-code-title]+pre>button {
+    top: 3.5rem !important;
+    /* Push down below title */
+}
+
+/* Hover state for button */
+.nextra-copy-icon:hover,
+button[title="Copy code"]:hover,
+.nextra-code-copy-btn:hover,
+div[data-rehype-pretty-code-fragment]>button:hover,
+pre>button:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+    color: #111827 !important;
+    border-color: #e5e7eb !important;
+}
+
+html[class~="dark"] .nextra-copy-icon:hover,
+html[class~="dark"] button[title="Copy code"]:hover,
+html[class~="dark"] .nextra-code-copy-btn:hover,
+html[class~="dark"] div[data-rehype-pretty-code-fragment]>button:hover,
+html[class~="dark"] pre>button:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #f0f6fc !important;
+    border-color: #30363d !important;
+}
+
+/* Inline Code Styling */
+:not(pre)>code {
+    background-color: rgba(175, 184, 193, 0.2);
+    color: #24292f;
+    padding: 0.2em 0.4em;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-family: var(--font-mono);
+}
+
+html[class~="dark"] :not(pre)>code {
+    background-color: rgba(110, 118, 129, 0.4);
+    color: #e6edf3;
+}
+
+/* Scrollbar */
+pre::-webkit-scrollbar {
+    height: 8px;
+    background: transparent;
+}
+
+pre::-webkit-scrollbar-thumb {
+    background: #e5e7eb;
+    border-radius: 4px;
+}
+
+html[class~="dark"] pre::-webkit-scrollbar-thumb {
+    background: #30363d;
+}
