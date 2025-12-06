@@ -1,4 +1,4 @@
-export default {
+const meta = {
     "auth": {
         "display": "hidden"
     },
@@ -24,3 +24,5 @@ export default {
         "display": "hidden"
     }
 }
+
+export default meta
