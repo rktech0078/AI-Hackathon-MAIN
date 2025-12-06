@@ -6,9 +6,9 @@ import { AiAgentProvider } from '@/contexts/AiAgentContext'
 import dynamic from 'next/dynamic'
 import RoboticIcon from '@/components/RoboticIcon'
 import AiAgent from '@/components/ai-agent/AiAgent'
+import 'nextra-theme-docs/style.css'
 import './globals.css'
 import './nextra-styles.css'
-import 'nextra-theme-docs/style.css'
 
 // Dynamically import UserAvatar to avoid SSR issues
 const UserAvatar = dynamic(() => import('@/components/UserAvatar'), {
@@ -23,7 +23,7 @@ export const metadata = {
   },
   description: 'A complete AI-native, robotics-first textbook designed for the Panaversity Hackathon. Learn ROS 2, Gazebo, Isaac Sim, and VLA robotics.',
   keywords: ['Physical AI', 'Robotics', 'Humanoid', 'ROS 2', 'Gazebo', 'Isaac Sim', 'VLA', 'AI Agents'],
-  authors: [{ name: 'Panaversity' }],
+  authors: [{ name: 'Abdul Rafay Khan' }],
   openGraph: {
     title: 'Physical AI & Humanoid Robotics',
     description: 'Complete textbook for building autonomous humanoid robots',
@@ -37,7 +37,7 @@ export const viewport = {
   maximumScale: 1,
 }
 
-const banner = <Banner storageKey="hackathon-2024">🎉 Physical AI Hackathon is Live! Join us in building the future of robotics.</Banner>
+const banner = <Banner storageKey="hackathon-2025">🎉 Physical AI Hackathon is Live! Join us in building the future of robotics.</Banner>
 const navbar = (
   <Navbar
     logo={
@@ -59,7 +59,7 @@ const navbar = (
         </span>
       </div>
     }
-    projectLink="https://github.com/panaversity/physical-ai-hackathon"
+    projectLink="https://github.com/rktech0078/AI-Hackathon-MAIN/tree/main"
   >
     <UserAvatar />
   </Navbar>
@@ -68,7 +68,7 @@ const footer = (
   <Footer>
     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', alignItems: 'center' }}>
       <div style={{ fontWeight: 600 }}>
-        MIT {new Date().getFullYear()} © Abdul Rafay
+        MIT {new Date().getFullYear()} © Abdul Rafay Khan
       </div>
       <div style={{ fontSize: '0.875rem', opacity: 0.7 }}>
         Built with ❤️ by Abdul Rafay Khan
@@ -90,7 +90,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               banner={banner}
               navbar={navbar}
               pageMap={await getPageMap()}
-              docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs"
+              docsRepositoryBase="https://github.com/rktech0078/AI-Hackathon-MAIN/tree/main"
               footer={footer}
             // ... Your additional layout options
             >
