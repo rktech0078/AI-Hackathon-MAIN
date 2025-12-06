@@ -31,6 +31,12 @@ export const metadata = {
   },
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 const banner = <Banner storageKey="hackathon-2024">🎉 Physical AI Hackathon is Live! Join us in building the future of robotics.</Banner>
 const navbar = (
   <Navbar
